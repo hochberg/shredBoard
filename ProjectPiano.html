@@ -1,0 +1,275 @@
+<!doctype html5>
+<!-- piano.html  Project:Interactive Piano Keyboard Webpage -->
+<!--Alex Hochberg Intro to Programming-->
+<!--____________________________________________ -->
+<html5>
+<head>
+<title> SHRED_BOARD </title>
+</head>
+<body>
+
+<!--Keyboard Images -->
+<img style="position:absolute; top:30px; left:400px;" src="keyboardImages/SHRED.png">
+<img style="position:absolute; top:120px; left:150px;" src="keyboardImages/Board.png">
+<img id="Button" style="position:absolute; top:135px; left:835px;" src="keyboardImages/greenButton.png" >
+<img style="position:absolute; top:170px; left:835px;" src="keyboardImages/blueButton.png" >
+
+<!--Keyboard White Key Images -->
+<img id="c1" style="position:absolute; top:200px; left:200px;" src="keyboardImages/greyKeyLeft.png">
+<img id="d1" style="position:absolute; top:200px; left:252px;" src="keyboardImages/greyKeyMid.png">
+<img id="e1" style="position:absolute; top:200px; left:304px;" src="keyboardImages/greyKeyRight.png">
+<img id="f1" style="position:absolute; top:200px; left:356px;" src="keyboardImages/greyKeyLeft.png">
+<img id="g1" style="position:absolute; top:200px; left:408px;" src="keyboardImages/greyKeyMid.png">
+<img id="a1" style="position:absolute; top:200px; left:460px;" src="keyboardImages/greyKeyMid.png">
+<img id="b1" style="position:absolute; top:200px; left:512px;" src="keyboardImages/greyKeyRight.png">
+<img id="c2" style="position:absolute; top:200px; left:564px;" src="keyboardImages/greyKeyLeft.png">
+<img id="d2" style="position:absolute; top:200px; left:616px;" src="keyboardImages/greyKeyMid.png">
+<img id="e2" style="position:absolute; top:200px; left:668px;" src="keyboardImages/greyKeyRight.png">
+<img id="f2" style="position:absolute; top:200px; left:720px;" src="keyboardImages/greyKeyLeft.png">
+<img id="g2" style="position:absolute; top:200px; left:772px;" src="keyboardImages/greyKeyRight.png">
+
+<!--Keyboard Black Key Images -->
+<img id="c#1" style="position:absolute; top:200px; left:230px;" src="keyboardImages/blackKey.png">
+<img id="d#1" style="position:absolute; top:200px; left:282px;" src="keyboardImages/blackKey.png">
+<img id="f#1" style="position:absolute; top:200px; left:386px;" src="keyboardImages/blackKey.png">
+<img id="g#1" style="position:absolute; top:200px; left:438px;" src="keyboardImages/blackKey.png">
+<img id="a#1" style="position:absolute; top:200px; left:490px;" src="keyboardImages/blackKey.png">
+<img id="c#2" style="position:absolute; top:200px; left:594px;" src="keyboardImages/blackKey.png">
+<img id="d#2" style="position:absolute; top:200px; left:646px;" src="keyboardImages/blackKey.png">
+<img id="f#2" style="position:absolute; top:200px; left:750px;" src="keyboardImages/blackKey.png">
+
+<!--Note Audio -->
+<audio src="notes/c1.mp3" type="audio/mp3" id="c1n"></audio>
+<audio src="notes/cs1.mp3" type="audio/mp3" id="c#1n"></audio>
+<audio src="notes/d1.mp3" type="audio/mp3" id="d1n"></audio>
+<audio src="notes/ds1.mp3" type="audio/mp3" id="d#1n"></audio>
+<audio src="notes/e1.mp3" type="audio/mp3" id="e1n"></audio>
+<audio src="notes/f1.mp3" type="audio/mp3" id="f1n"></audio>
+<audio src="notes/fs1.mp3" type="audio/mp3" id="f#1n"></audio>
+<audio src="notes/g1.mp3" type="audio/mp3" id="g1n"></audio>
+<audio src="notes/gs1.mp3" type="audio/mp3" id="g#1n"></audio>
+<audio src="notes/a1.mp3" type="audio/mp3" id="a1n"></audio>
+<audio src="notes/as1.mp3" type="audio/mp3" id="a#1n"></audio>
+<audio src="notes/b1.mp3" type="audio/mp3" id="b1n"></audio>
+<audio src="notes/c2.mp3" type="audio/mp3" id="c2n"></audio>
+<audio src="notes/cs2.mp3" type="audio/mp3" id="c#2n"></audio>
+<audio src="notes/d2.mp3" type="audio/mp3" id="d2n"></audio>
+<audio src="notes/e2.mp3" type="audio/mp3" id="e2n"></audio>
+<audio src="notes/f2.mp3" type="audio/mp3" id="f2n"></audio>
+<audio src="notes/fs2.mp3" type="audio/mp3" id="f#2n"></audio>
+<audio src="notes/g2.mp3" type="audio/mp3" id="g2n"></audio>
+<audio src="notes/ds2.mp3" type="audio/mp3" id="d#2n"></audio>
+
+
+
+<script type="text/javascript">
+
+//Updates the image of the piano when a key event is fired
+function update(keyid, keysrc){
+document.getElementById(keyid).src=keysrc;
+}
+
+//keydown event listener
+document.addEventListener('keydown', function(ev) {
+
+//white keys
+    if (ev.keyCode == 81) {
+	  update("c1","keyboardImages/blueKeyLeft.png");
+	  document.getElementById("c1n").play();
+    }
+	else if (ev.keyCode == 87) {
+	  update("d1","keyboardImages/blueKeyMid.png");
+	  document.getElementById("d1n").play();
+	}
+	else if (ev.keyCode == 69) {
+	  update("e1","keyboardImages/blueKeyRight.png");
+	  document.getElementById("e1n").play();
+	}
+	else if (ev.keyCode == 82) {
+	  update("f1","keyboardImages/blueKeyLeft.png");
+	  document.getElementById("f1n").play();
+	}
+	else if (ev.keyCode == 84) {
+	  update("g1","keyboardImages/blueKeyMid.png");
+	  document.getElementById("g1n").play();
+	}
+	else if (ev.keyCode == 89) {
+	  update("a1","keyboardImages/blueKeyMid.png");
+	  document.getElementById("a1n").play();
+	}
+	else if (ev.keyCode == 85) {
+	  update("b1","keyboardImages/blueKeyRight.png");
+	  document.getElementById("b1n").play();
+	}
+	else if (ev.keyCode == 73) {
+	  update("c2","keyboardImages/blueKeyLeft.png");
+	  document.getElementById("c2n").play();
+	}
+	else if (ev.keyCode == 79) {
+	  update("d2","keyboardImages/blueKeyMid.png");
+	  document.getElementById("d2n").play();
+	}
+	else if (ev.keyCode == 80) {
+	  update("e2","keyboardImages/blueKeyRight.png");
+	  document.getElementById("e2n").play();
+	}
+	else if (ev.keyCode == 219) {
+	  update("f2","keyboardImages/blueKeyLeft.png");
+	  document.getElementById("f2n").play();
+	}
+	else if (ev.keyCode == 221) {
+	  update("g2","keyboardImages/blueKeyRight.png");
+	  document.getElementById("g2n").play();
+
+	//black keys
+	}
+	else if (ev.keyCode == 50) {
+	  update("c#1","keyboardImages/greenKey.png");
+	  document.getElementById("c#1n").play();
+	}
+	else if (ev.keyCode == 51) {
+	  update("d#1","keyboardImages/greenKey.png");
+	  document.getElementById("d#1n").play();
+	}
+	else if (ev.keyCode == 53) {
+	  update("f#1","keyboardImages/greenKey.png");
+	  document.getElementById("f#1n").play();
+	}
+	else if (ev.keyCode == 54) {
+	  update("g#1","keyboardImages/greenKey.png");
+	  document.getElementById("g#1n").play();
+	}
+	else if (ev.keyCode == 55) {
+	  update("a#1","keyboardImages/greenKey.png");
+	  document.getElementById("a#1n").play();
+
+	}
+	else if (ev.keyCode == 57) {
+	  update("c#2","keyboardImages/greenKey.png");
+	  document.getElementById("c#2n").play();
+	}
+	else if (ev.keyCode == 48) {
+	  update("d#2","keyboardImages/greenKey.png");
+	  document.getElementById("d#2n").play();
+	}
+	else if (ev.keyCode == 187) {
+	  update("f#2","keyboardImages/greenKey.png");
+	  document.getElementById("f#2n").play();
+	}
+}, true);
+
+
+
+//keyup event listener
+document.addEventListener('keyup', function(event) {
+
+//white keys
+    if (event.keyCode == 81) {
+	  update("c1","keyboardImages/greyKeyLeft.png");
+	  document.getElementById("c1n").pause();
+	  document.getElementById("c1n").currentTime = 0;
+    }
+	else if (event.keyCode == 87) {
+	  update("d1","keyboardImages/greyKeyMid.png");
+	  document.getElementById("d1n").pause();
+	  document.getElementById("d1n").currentTime = 0;
+	}
+	else if (event.keyCode == 69) {
+	  update("e1","keyboardImages/greyKeyRight.png");
+	  document.getElementById("e1n").pause();
+	  document.getElementById("e1n").currentTime = 0;
+	}
+	else if (event.keyCode == 82) {
+	  update("f1","keyboardImages/greyKeyLeft.png");
+	  document.getElementById("f1n").pause();
+	  document.getElementById("f1n").currentTime = 0;
+	}
+	else if (event.keyCode == 84) {
+	  update("g1","keyboardImages/greyKeyMid.png");
+	   document.getElementById("g1n").pause();
+	  document.getElementById("g1n").currentTime = 0;
+	}
+	else if (event.keyCode == 89) {
+	  update("a1","keyboardImages/greyKeyMid.png");
+	  document.getElementById("a1n").pause();
+	  document.getElementById("a1n").currentTime = 0;
+	}
+	else if (event.keyCode == 85) {
+	  update("b1","keyboardImages/greyKeyRight.png");
+	  document.getElementById("b1n").pause();
+	  document.getElementById("b1n").currentTime = 0;
+	}
+	else if (event.keyCode == 73) {
+	  update("c2","keyboardImages/greyKeyLeft.png");
+	  document.getElementById("c2n").pause();
+	  document.getElementById("c2n").currentTime = 0;
+	}
+	else if (event.keyCode == 79) {
+	  update("d2","keyboardImages/greyKeyMid.png");
+	  document.getElementById("d2n").pause();
+	  document.getElementById("d2n").currentTime = 0;
+	}
+	else if (event.keyCode == 80) {
+	  update("e2","keyboardImages/greyKeyRight.png");
+	  document.getElementById("e2n").pause();
+	  document.getElementById("e2n").currentTime = 0;
+	}
+	else if (event.keyCode == 219) {
+	  update("f2","keyboardImages/greyKeyLeft.png");
+	  document.getElementById("f2n").pause();
+	  document.getElementById("f2n").currentTime = 0;
+	}
+	else if (event.keyCode == 221) {
+	  update("g2","keyboardImages/greyKeyRight.png");
+	  document.getElementById("g2n").pause();
+	  document.getElementById("g2n").currentTime = 0;
+	}
+
+	//black keys
+	else if (event.keyCode == 50) {
+	  update("c#1","keyboardImages/blackKey.png");
+	  document.getElementById("c#1n").pause();
+	  document.getElementById("c#1n").currentTime = 0;
+	}
+	else if (event.keyCode == 51) {
+	  update("d#1","keyboardImages/blackKey.png");
+	  document.getElementById("d#1n").pause();
+	  document.getElementById("d#1n").currentTime = 0;
+	}
+	else if (event.keyCode == 53) {
+	  update("f#1","keyboardImages/blackKey.png");
+	  document.getElementById("f#1n").pause();
+	  document.getElementById("f#1n").currentTime = 0;
+	}
+	else if (event.keyCode == 54) {
+	  update("g#1","keyboardImages/blackKey.png");
+	  document.getElementById("g#1n").pause();
+	  document.getElementById("g#1n").currentTime = 0;
+	}
+	else if (event.keyCode == 55) {
+	  update("a#1","keyboardImages/blackKey.png");
+	  document.getElementById("a#1n").pause();
+	  document.getElementById("a#1n").currentTime = 0;
+	}
+	else if (event.keyCode == 57) {
+	  update("c#2","keyboardImages/blackKey.png");
+	  document.getElementById("c#2n").pause();
+	  document.getElementById("c#2n").currentTime = 0;
+	}
+	else if (event.keyCode == 48) {
+	  update("d#2","keyboardImages/blackKey.png");
+	  document.getElementById("d#2n").pause();
+	  document.getElementById("d#2n").currentTime = 0;
+	}
+	else if (event.keyCode == 187) {
+	  update("f#2","keyboardImages/blackKey.png");
+	  document.getElementById("f#2n").pause();
+	  document.getElementById("f#2n").currentTime = 0;
+	}
+}, true);
+
+
+
+</script>
+</body>
+</html5>
